@@ -1,0 +1,29 @@
+#+TITLE: Sterownik silnika
+
+* Toolchain
+- Język: C, nie w C++, żeby móc łatwo eksportować funkcje
+- System budowania: Meson
+
+* Niekompatybilności między Arduino a Orange Pi
+- PWM
+- read, write
+- reszta funkcji z Arduino
+- inicjalizacja/ustawianie pinów
+- main() vs loop()
+
+* Sterowanie robotem
+1) sterowanie jak czołgiem:
+   - ~void siłaPrawychKół(float siła)~
+   - ~void siłaLewychKół(float siła)~
+   - ~float siła~ $\in$ [-1; 1]
+
+2) sterowanie dla człowieka
+   - ~void skręćWMiejscuXY(float x, float y)~
+   - ~void skręćWMiejscuϑd(float ϑ, float dist)~
+   - ~void ustawSiłę(float siła)~
+   - ~float siła~ $\in$ [-1; 1]
+
+dla obu metod istnieje funkcja ~ustaw_wszystko(float, float)~
+
+* TODO
+- sensory

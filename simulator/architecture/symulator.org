@@ -1,0 +1,85 @@
+#+TITLE: Symulator
+
+* System generacji terenu
+   - proceduralna generacja ściań
+   - tworzenie materiałów z ETI
+   - coś z szybami [opcjonalne]
+     => używamy czujnika?
+
+* Symulacja robota (jego sensory itp)
+   - Kamera
+   - żyroskop
+   - akcelerometr
+   - problem: tick czasu w symulatorze a tick czasu na Orange Pi
+
+* Generator
+** Wave-Function collapse
+- przeznaczyć na to weekend
+
+** Czego oczekujemy
+- możemy rysować własne tile po mapie
+- jakiś generator może wygenerować biom starego eti
+- inny wygeneruje biom nowego eti
+- inny generator połączy tile z tych biomów
+
+** Biomy
+- Stare ETI
+- Nowe ETI
+- Pokój komputerowy
+
+** Klasy
+#+BEGIN_SRC C++
+using WorldMap = std::unordered_map<Point2, WorldElement>;
+
+class Simulator {
+    World world;
+    GeneratorStack stack;
+
+public:
+    void generate_tiles() {
+        for (auto& generator: stack)
+            generator.generate(world);
+    };
+    ...
+};
+
+class World {
+    WorldMap tiles;
+
+public:
+    Tile& getTile(Point2);
+    void  setTile(Point2);
+    ...
+};
+
+class GeneratorStack {
+    std::vector<Generator*> generators;
+
+public:
+    void push(Generator*);
+};
+
+class Generator {
+public:
+    void generate(World& world) {
+        //algorytm generacji, np. Wave Function Collapse
+    }
+    ...
+};
+
+class Biome {
+    Tileset tiles;
+    ProbabilitySet p;
+};
+#+END_SRC
+   
+* Interop z siecią neuronową w Pythonie i sterownikiem w C
+   - dostęp do floatów z silnikami
+     ~setSilniki()~
+   - odczytanie obrazu z klatki
+     ~getObraz()~
+     
+
+* Nagrody i kary
+   
+* UI
