@@ -1,0 +1,10 @@
+* Robotyczny Rój™ - dokumentacja projektu grupowego
+
+| Obecne pytania | [[https://docs.google.com/document/d/1kyzdxYgQJ5d-sMB5JxBOJCcFcyahFhYriUiPCamjrJ4/edit?usp=drive_link]] |
+
+**  Format
+- Notatki powinny być zwykłymi plikami tekstowymi. Zostaną na sam koniec złączone w jeden duży plik PDF.
+- Należy je umieścić w katalogu pasującym do tematyki. Jeżeli takowego brakuje należy go utworzyć.
+
+** Co umieszczać w notatkach?
+Szczegółowy opis pracy nad daną częścią projektu grupowego.
