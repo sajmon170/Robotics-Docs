@@ -1,0 +1,58 @@
+#+TITLE: Zajęcia projektowe
+
+* Podział zadań
+- Szymon: poprawienie tilesetu, rozdzielenie meshu do renderowania od meshu od fizyki
+- Maciek: znalezienie i ustawienie odpowiednika GridMapy 3D z Godota w Unity
+- Mateusz: zainstalowanie i przetestowanie OR-Tools w Unity
+
+* Tileset
+- Naprawiono błąd z poziomem podłogi
+  - Podłoga tilesetu powinna rozpoczynać się na poziomie zerowym, ponieważ postacie są na nim umieszczane w różnych silnikach. Trzeba uważać na domyślne umieszczanie obiektów w Blenderze.
+
+  Wyrównywanie obiektu tutorial:
+  - Zaznacz dolną ścianę w Edit Mode
+  - Shift+S -> Cursor to selected
+  - z Object Mode przejść do menu Object -> Set Origin -> Origin to 3D Cursor
+  - w zakładce Transform należy wyzerować ujemne przesunięcie na osi Z
+    
+  Zadanie dodatkowe: przydałby się do tego skrypt w Pythonie.
+
+- Arbitralnie wybrane rozmiary:
+  - rozmiar tile: 1x1x1 m (nie lepiej 1x1x2 m?)
+  - Grubość podłogi: 0.25m
+  - Grubość ścian: 0.25m
+
+- Robienie tych tilesetów jest toporne. Obecnie są robione na podstawie modyfikatora boolean, a potem naprawiana jest ręcznie geometria.
+  - Można w Blenderze rozbić pojedynczy tile na części - ściana, podłoga itp. Pojedynczy tile importowany z pliku .fbx może finalnie składać się z wielu meshy bez artefaktów wizualnych (przetestowane)
+    
+- Nastąpiły problemy (za mały rozmiar, zła orientacja, złe przesunięcie obiektu) przy eksporcie z Blendera do formatu .fbx. Żeby ich uniknąć, należy ustawić w opcjach eksportu:
+  - [[./images/fbx_export_settings.png]]
+
+    Żeby uniknąć złego przesunięcia trzeba się upewnić, że nasz obiekt jest wyśrodkowany na osiach X, Y.
+    - Dobre ustawienie:
+      [[./images/blender_good_alignment.png]]
+
+    - Złe ustawienie:
+      [[./images/blender_bad_alignment.png]]
+    
+
+* GridMapa
+- Istnieje dodatek do TileMap, ale kosztuje $10
+  https://assetstore.unity.com/packages/tools/utilities/3d-tilemap-173870
+
+- Istnieje oficjalny dodatek od Unity Technologies, działa jednak w 2D
+  https://www.youtube.com/watch?v=ulFc6p3hQzQ
+  https://www.youtube.com/watch?v=u8zJnXnZiFE
+
+- Wystąpiły bardzo duże problemy z Unity:
+  1) maciek pisze na kartce 
+  2) nie chce mi sie tego przepisywać
+     
+  
+* OR-Tools
+- Zainstalowano runtime OR-Toolsów
+- Wrzucono pliki .dll ~Google.Ortools.dll~ i ~Google.Protobuf.dll~
+- Wystąpił kolejny błąd: "Unable to resolve reference "System.Runtime.Intrinsics"
+- Spróbowano wymienić poziom kompatybilności .NET w ustawieniach Unity
+- ...nadal są błędy
+- TODO: sprawdzić czy w ogóle działa w Visual Studio bez Unity
