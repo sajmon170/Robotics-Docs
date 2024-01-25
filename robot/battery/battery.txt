@@ -1,0 +1,11 @@
+Źródło zasilania 
+ 
+Jako źródło zasilania przyjęliśmy akumulatory, aby nasz robot mógł swobodnie się poruszać. Kolejną pożądaną cechą tego rozwiązania w przeciwieństwie do baterii jest możliwość ponownego ich naładowania. Dobierając akumulatory, skupiliśmy się na ich pojemności, aby były w stanie zasilić robota przez długi czas. Zdecydowaliśmy się na ogniwa Li-Ion (litowo-jonowym) 18650 o pojemności 3350 mAh. 
+ 
+Połączenie baterii 
+ 
+Akumulatory zostały połączone szeregowo. Realizując takie połączenie, uzyskaliśmy źródło zasilania o zwiększonym napięciu i zachowanej pojemności. W naszym przypadku były to 4 ogniwa dające napięcie 14.8 V. Aby nie spowodować żadnych uszkodzeń, do połączenia zastosowaliśmy koszyk na akumulatory. Połączenia wykonaliśmy samodzielnie. 
+ 
+Bezpieczeństwo 
+ 
+W celu bezpiecznego użytkowania ogniw Li-Ion podjęliśmy decyzję o zastosowaniu BMS (Battery Management System). Łącząc ze sobą kilka ogniw, nie mieliśmy możliwości, skorzystania z baterii ze wbudowanymi zabezpieczeniami.
